@@ -1,0 +1,14 @@
+.share {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background-color: var(--Very-Dark-Grayish-Blue);
+    padding: 1.25rem 3rem;
+    border-radius: 1rem;
+    position: absolute;
+    left: 72rem;
+    bottom: 23.7rem;
+}
+.share > p {
+    color: var(--Grayish-Blue);
+}
