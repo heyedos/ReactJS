@@ -22,7 +22,6 @@ export default function Forms() {
           setIsID(e.target.id);
         }
     }
-    
     return(
         <div className="forms">
             <Form Id={"Fname"} Type={"text"} ClassName={'form-input'} Placeholder={'First Name'} handleInput={handleInput} message={"First Name cannot be empty"} selectedID={ID} isError={isError} />
