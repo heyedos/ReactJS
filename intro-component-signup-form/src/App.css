@@ -102,6 +102,7 @@ b {
 }
 .div-error {
     height: 1rem;
+    text-align: right;
 }
 button:hover {
     opacity: 0.5;
