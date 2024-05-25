@@ -54,26 +54,46 @@ export default function Container() {
     var Year = 2024 - yearInput;
     var Month = 5 - monthInput;
     var Day = 25 - dayInput;
+    if (Year === 0) {
+      if (Day < 0) {
+        Day += 30;
+        Month -= 1;
+      }
+    }
     if (Day < 0 && Month < 0) {
       Month += 12;
       Day += 30;
       Year--;
-    } else {
+    } else if (Month < 0 || Day < 0) {
       if (Month < 0) {
         Month += 12;
         Year--;
-      } else if (Day < 0) {
+      } else if (Day < 0 && Month > 0) {
         Day += 30;
-        Year--;
+        Month--;
       }
     }
     setYear(Year);
     setDay(Day);
     setMonth(Month);
-    if (Year < 0) {
+    if (yearInput > 2024 || monthInput > 12 || dayInput > 30) {
       setYear("--");
       setDay("--");
       setMonth("--");
+    }
+    if (
+      (yearInput > 2023 && monthInput > 5) ||
+      (yearInput > 2023 && monthInput > 4 && dayInput > 25)
+    ) {
+      setYear("--");
+      setDay("--");
+      setMonth("--");
+      if (monthInput > 5) {
+        setErrorMonth(true);
+      }
+      if (dayInput > 25) {
+        setErrorDay(true);
+      }
     }
   }
   return (
