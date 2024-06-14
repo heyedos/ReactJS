@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+:root {
+    --White: hsl(0, 0%, 100%);
+    --Light-grayish-violet: hsl(270, 3%, 87%);
+    --Dark-grayish-violet: hsl(279, 6%, 55%);
+    --Very-dark-violet: hsl(278, 68%, 11%);
+    --Red: hsl(0, 100%, 66%);
+    --Linear-gradient: hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
+}
+html {
+    font-family: "Space Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+body {
+    font-size: 18px;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.numbers {
+    letter-spacing: 5px;
+}
+input {
+    border: 1px solid ;
+    padding: .5rem;
+    padding-right: 1REM;
+    padding-left: 1rem;
+    border-radius: 5px;
+}
