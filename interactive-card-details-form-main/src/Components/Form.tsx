@@ -19,6 +19,7 @@ const Form = ({handleName,handleNumber,handleCvc,handleMonth,handleYear,nameInpu
   const [dateError,setDateError] = useState<boolean | null>(null);
   const [cvcError,setCvcError] = useState<boolean | null>(null);
   const [validNumberError,setvalidNumberError] = useState<boolean | null>(null);
+  const [isHover,setIsHover] = useState<boolean | null>(null);
   function handleSubmit():void {
     const regex = /^[0-9]*$/;
     const validNumber = regex.test(numberInput);
@@ -47,6 +48,10 @@ const Form = ({handleName,handleNumber,handleCvc,handleMonth,handleYear,nameInpu
         handleClick();
       }
   }
+  function hoverButton():void {
+    setIsHover(!isHover);
+  }
+  
     return(
         <div className="Card-Info flex flex-col gap-5 w-96">
           <div className="name flex-col flex gap-2">
@@ -79,7 +84,8 @@ const Form = ({handleName,handleNumber,handleCvc,handleMonth,handleYear,nameInpu
               {(cvcError===false) && <p className="text-xs text-Cred">Can't be blank</p>}
             </div>
           </div>
-          <button type="submit" className="bg-VDarkV text-white w-full py-2 rounded-md" onClick={()=>{handleSubmit();}}>Confirm</button>
+          <button type="submit" className="bg-VDarkV text-white w-full py-2 rounded-md" onClick={()=>{handleSubmit();}} onMouseEnter={hoverButton} onMouseLeave={hoverButton}>Confirm</button>
+          {isHover && <p className="text-sm text-Cred">Hovered Text</p>}
         </div>
     );
 }
